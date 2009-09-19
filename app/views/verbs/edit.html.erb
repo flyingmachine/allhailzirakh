@@ -1,0 +1,36 @@
+<h1>Editing verb</h1>
+
+<% form_for(@verb) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :command %><br />
+    <%= f.text_field :command %>
+  </p>
+  <p>
+    <%= f.label :roundtime %><br />
+    <%= f.text_field :roundtime %>
+  </p>
+  <p>
+    <%= f.label :you_see %><br />
+    <%= f.text_field :you_see %>
+  </p>
+  <p>
+    <%= f.label :target_sees %><br />
+    <%= f.text_field :target_sees %>
+  </p>
+  <p>
+    <%= f.label :others_see %><br />
+    <%= f.text_field :others_see %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @verb %> |
+<%= link_to 'Back', verbs_path %>

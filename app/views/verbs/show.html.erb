@@ -1,0 +1,33 @@
+<p>
+  <b>Name:</b>
+  <%=h @verb.name %>
+</p>
+
+<p>
+  <b>Command:</b>
+  <%=h @verb.command %>
+</p>
+
+<p>
+  <b>Roundtime:</b>
+  <%=h @verb.roundtime %>
+</p>
+
+<p>
+  <b>You see:</b>
+  <%=h @verb.you_see %>
+</p>
+
+<p>
+  <b>Target sees:</b>
+  <%=h @verb.target_sees %>
+</p>
+
+<p>
+  <b>Others see:</b>
+  <%=h @verb.others_see %>
+</p>
+
+
+<%= link_to 'Edit', edit_verb_path(@verb) %> |
+<%= link_to 'Back', verbs_path %>

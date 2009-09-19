@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  command: MyString
+  roundtime: 1
+  you_see: MyString
+  target_sees: MyString
+  others_see: MyString
+
+two:
+  name: MyString
+  command: MyString
+  roundtime: 1
+  you_see: MyString
+  target_sees: MyString
+  others_see: MyString
