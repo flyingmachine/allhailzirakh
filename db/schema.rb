@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20090919163828) do
     t.string   "you_see"
     t.string   "target_sees"
     t.string   "others_see"
+    t.text     "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
