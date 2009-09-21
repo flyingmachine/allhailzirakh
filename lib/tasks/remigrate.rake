@@ -6,6 +6,11 @@ task :remigrate => :environment do
 #  Rake::Task["db:fixtures:load"].invoke
 end
 
+task :remigrate_production => :environment do
+  ActiveRecord::Base.connection.tables.each { |t| ActiveRecord::Base.connection.drop_table t }
+  Rake::Task["db:migrate"].invoke
+end
+
 task :recreate_db do
   Rake::Task["remigrate"].invoke
   Rake::Task["import:video_games"].invoke
