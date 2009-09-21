@@ -17,17 +17,19 @@
   %tr
     %td.see You see:
     %td= h verb.you_see
-  %tr
-    %td.see Target sees:
-    %td= h verb.target_sees
-  %tr
-    %td.see Others see:
-    %td= h verb.others_see
+  - unless verb.target_sees.blank?
+    %tr
+      %td.see Target sees:
+      %td= h verb.target_sees
+  - unless verb.others_see.blank?
+    %tr
+      %td.see Others see:
+      %td= h verb.others_see
   - if verb.roundtime.to_i > 0
     %tr
       %td.see Roundtime:
       %td= h verb.roundtime
-  - if !verb.notes.blank?
+  - unless verb.notes.blank?
     %tr
       %td.see Notes:
       %td= h verb.notes
