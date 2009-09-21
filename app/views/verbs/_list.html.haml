@@ -26,6 +26,10 @@
     %tr
       %td.see Notes:
       %td= h verb.notes
+  - unless verb.tag_list.blank?
+    %tr
+      %td.see Tags:
+      %td= h verb.tag_list
   %tr.last
     %td{:colspan => 2}
       =  link_to 'Edit', edit_verb_path(verb)
