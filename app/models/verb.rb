@@ -1,9 +1,11 @@
 class Verb < ActiveRecord::Base
   
-  before_validation :extract_name
+  validates_presence_of :command
+  
+  after_validation :extract_name
   
   def extract_name
-    self.name = command.match(/\S+/)[0]
+    self.name = self.command.to_s.match(/\S+/)[0]
   end
   
 end

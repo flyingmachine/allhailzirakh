@@ -1,35 +1,3 @@
 <h1>New verb</h1>
-
-<% form_for(@verb) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :command %><br />
-    <%= f.text_field :command %>
-  </p>
-  <p>
-    <%= f.label :roundtime %><br />
-    <%= f.text_field :roundtime %>
-  </p>
-  <p>
-    <%= f.label :you_see %><br />
-    <%= f.text_field :you_see %>
-  </p>
-  <p>
-    <%= f.label :target_sees %><br />
-    <%= f.text_field :target_sees %>
-  </p>
-  <p>
-    <%= f.label :others_see %><br />
-    <%= f.text_field :others_see %>
-  </p>
-  <p>
-    <%= f.label :notes %><br />
-    <%= f.text_area :notes %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
-
+<%= render :partial => 'form' %>
 <%= link_to 'Back', verbs_path %>

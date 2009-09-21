@@ -1,13 +1,15 @@
 %h1 All Hail Zirakh!
 .parenthetical Or else!!!
 
-= link_to 'New verb', new_verb_path
+.new-verb-container
+  %h2 New Verb
+  = render :partial => 'form'
 
 - current_name = ""
 
 - @verbs.each do |verb|
   - if verb.name != current_name
-    - "</table>" if current_name != ""
+    = "</table>" if current_name != ""
     %h2= verb.name
   = "<table>" if verb.name != current_name
   %tr

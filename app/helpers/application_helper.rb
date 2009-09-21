@@ -4,4 +4,8 @@ module ApplicationHelper
     keyword_regex = Keywords.join("|")
     string.gsub(/(#{keyword_regex})/, "<em>#{h('\1')}</em>")
   end
+  
+  def ajax_spinner(options = {})
+    image_tag "spinner.gif", {:class => "spinner"}.merge(options)
+  end
 end

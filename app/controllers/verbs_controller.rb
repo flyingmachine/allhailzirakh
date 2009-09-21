@@ -2,7 +2,8 @@ class VerbsController < ApplicationController
   # GET /verbs
   # GET /verbs.xml
   def index
-    @verbs = Verb.all
+    @verb = Verb.new
+    @verbs = Verb.all(:order => "command DESC")
 
     respond_to do |format|
       format.html # index.html.erb

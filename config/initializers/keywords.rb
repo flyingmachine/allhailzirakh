@@ -6,7 +6,9 @@ Keywords = %w{
   armor
   item
   container
-  armor
   clothing
   wearable
+  bodypart
+  self
+  instrument
 }
