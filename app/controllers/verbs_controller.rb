@@ -8,6 +8,7 @@ class VerbsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @verbs }
+      format.js { render :partial => "list" }
     end
   end
 

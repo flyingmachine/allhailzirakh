@@ -20,7 +20,9 @@ NewVerbForm = $.klass(Remote.Form, {
 	success: function(response, result) {
     this.enable()
     this.spinner.hide();
+    $("#new_verb")[0].reset()
     $("#verb_command")[0].focus()
+    $("#verb-list").load("/verbs")
 	},
 	
 	error: function(request, textStatus, erorThrown) {

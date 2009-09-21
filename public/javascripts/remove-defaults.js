@@ -32,6 +32,7 @@ function setDefaults() {
   setDefault("#verb_target_sees", "Barumpharumph points at you.")
   setDefault("#verb_others_see", "Barumpharumph points at Zirakh.")
   setDefault("#verb_notes", "Pointing is rude!")
+  setDefault("#verb_tag_list", "races, guilds, comma-separated")
 }
 
 function showDefault(){

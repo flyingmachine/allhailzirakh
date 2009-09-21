@@ -1,0 +1,34 @@
+- current_name = ""
+
+- @verbs.each do |verb|
+  - if verb.name != current_name
+    = "</table>" if current_name != ""
+    %h2= verb.name
+  = "<table>" if verb.name != current_name
+  %tr
+    %td.syntax{:colspan => 2}= highlight_keywords(verb.command)
+  %tr
+    %td.see You see:
+    %td= h verb.you_see
+  - unless verb.target_sees.blank?
+    %tr
+      %td.see Target sees:
+      %td= h verb.target_sees
+  - unless verb.others_see.blank?
+    %tr
+      %td.see Others see:
+      %td= h verb.others_see
+  - if verb.roundtime.to_i > 0
+    %tr
+      %td.see Roundtime:
+      %td= h verb.roundtime
+  - unless verb.notes.blank?
+    %tr
+      %td.see Notes:
+      %td= h verb.notes
+  %tr.last
+    %td{:colspan => 2}
+      =  link_to 'Edit', edit_verb_path(verb)
+      =  link_to 'Destroy', verb, :confirm => 'Are you sure?', :method => :delete
+  - if verb.name != current_name
+    - current_name = verb.name
