@@ -1,4 +1,5 @@
 log
 tmp
-db
+db/schema
+db/*.sqlite3
 .DS_Store
