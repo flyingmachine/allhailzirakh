@@ -7,6 +7,7 @@ class CreateVerbs < ActiveRecord::Migration
       t.string :you_see
       t.string :target_sees
       t.string :others_see
+      t.string :your_status
       t.text   :notes
 
       t.timestamps
