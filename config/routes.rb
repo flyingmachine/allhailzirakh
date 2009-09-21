@@ -1,6 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :tags
-
   map.resources :verbs
 
   # The priority is based upon order of creation: first created -> highest priority.
