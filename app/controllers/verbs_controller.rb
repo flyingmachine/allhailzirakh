@@ -14,7 +14,7 @@ class VerbsController < ApplicationController
   
   def find_verbs
     if params[:letter]
-      @verbs = Verb.all(:conditions => "name LIKE '#{params[:letter]}%'")
+      @verbs = Verb.all(:conditions => "name LIKE '#{params[:letter].downcase}%'")
     else
       @verbs = Verb.all(:order => "command asc")
     end
