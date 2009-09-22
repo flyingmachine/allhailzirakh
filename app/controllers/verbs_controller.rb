@@ -13,10 +13,14 @@ class VerbsController < ApplicationController
   end
   
   def find_verbs
-    if params[:letter]
-      @verbs = Verb.all(:conditions => "name LIKE '#{params[:letter].downcase}%'")
+    common = {:order => "command asc", :include => :tags}
+    
+    @verbs = if params[:letter]
+      Verb.all(common.merge(:conditions => "verbs.name LIKE '#{params[:letter].downcase}%'"))
+    elsif tag = params[:race] || params[:guild]
+      Verb.all(common.merge(:conditions => "tags.name = '#{tag}'"))
     else
-      @verbs = Verb.all(:order => "command asc")
+      Verb.all(common)
     end
     
   end

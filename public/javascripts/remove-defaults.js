@@ -26,7 +26,7 @@ function setDefault(selector, default_value){
 
 function setDefaults() {  
   setDefault("#verb_command", "point target")
-  setDefault("#verb_your_status", "standing")
+  setDefault("#verb_your_status", "standing/sitting/kneeling/hiding/invis")
   setDefault("#verb_roundtime", "0")
   setDefault("#verb_you_see", "You point at Zirakh.")
   setDefault("#verb_target_sees", "Barumpharumph points at you.")
