@@ -42,7 +42,7 @@ function showDefault(){
 
 function removeDefaults(){
   // default default value
-  $("input[type=text], input[type=password]")
+  $("input[type=text], input[type=password], textarea")
     .each(function(){
       if(this.default_value == undefined)
       {
@@ -50,14 +50,14 @@ function removeDefaults(){
       } 
     })
     
-  $("input[type=text], input[type=password]").focus(removeDefault)
+  $("input[type=text], input[type=password], textarea").focus(removeDefault)
   $("form").submit(function(){
-    $("input[type=text], input[type=password]").each(removeDefault)
+    $("input[type=text], input[type=password], textarea").each(removeDefault)
   })
 }
 
 function removeDefault(){
-  if(this.value == this.default_value && $(this).hasClass("defaulted")){
+  if($(this).hasClass("defaulted")){
     this.value = ""
   }
   $(this).removeClass("defaulted")
