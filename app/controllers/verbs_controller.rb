@@ -13,18 +13,19 @@ class VerbsController < ApplicationController
   end
   
   def find_verbs
-    common = {:order => "command asc", :include => :tags}
+    page = params[:page] || 1
+    common = {:order => "command asc", :include => :tags, :page => page}
     
     @verbs = if params[:letter]
-      Verb.all(common.merge(:conditions => "verbs.name LIKE '#{params[:letter].downcase}%'"))
+      Verb.paginate(common.merge(:conditions => "verbs.name LIKE '#{params[:letter].downcase}%'"))
     elsif tag = params[:race] || params[:guild]
       Verb.all(common.merge(:conditions => "tags.name = '#{tag}'"))
     elsif q = (params[:q] && params[:q].upcase)
       fields = %w{verbs.name verbs.command verbs.you_see verbs.target_sees verbs.others_see verbs.your_status verbs.notes tags.name}
       condition = fields.collect{|field| "UPPER(#{field}) LIKE '%#{q}%'"}.join(" OR ")
-      Verb.all(common.merge(:conditions => condition))
+      Verb.paginate(common.merge(:conditions => condition))
     else
-      Verb.all(common)
+      Verb.paginate(common)
     end
     
   end

@@ -77,3 +77,6 @@ textarea {
   .navigation a:hover, .navigation a.selected {
     background: #999;
     border-bottom: 1px solid #333; }
+
+.pagination {
+  margin: 20px 0 10px; }
