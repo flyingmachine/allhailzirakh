@@ -45,9 +45,6 @@ em {
   font-style: italic;
   margin-bottom: 15px; }
 
-.new-verb-container {
-  float: right; }
-
 .defaulted {
   font-style: italic;
   color: #999; }
@@ -62,6 +59,11 @@ textarea {
 .clear {
   clear: both; }
 
+.new-verb-container {
+  float: right; }
+  .new-verb-container h2 {
+    margin: 0; }
+
 .navigation .group {
   margin-bottom: 10px; }
 .navigation a {
@@ -71,3 +73,6 @@ textarea {
   float: left;
   margin-right: 2px;
   border-bottom: 1px solid #999; }
+  .navigation a:hover {
+    background: #999;
+    border-bottom: 1px solid #333; }
