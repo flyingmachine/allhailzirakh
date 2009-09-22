@@ -13,19 +13,19 @@
     .navigation
       .alpha.group
         - ("A".."Z").to_a.each do |letter|
-          = link_to letter, verbs_path(:letter => letter)
+          = link_to letter, verbs_path(:letter => letter), :class => ("selected" if params[:letter] == letter)
         .clear
       .races.group
         - Races.each do |race|
-          = link_to race, verbs_path(:race => race)
+          = link_to race, verbs_path(:race => race), :class => ("selected" if params[:race] == race)
         .clear
       .guilds.group
         - Guilds.each do |guild|
-          = link_to guild, verbs_path(:guild => guild)
+          = link_to guild, verbs_path(:guild => guild), :class => ("selected" if params[:guild] == guild)
         .clear
       .search
         %form
           = text_field_tag "q"
-          = submit_tag "Search", :name => nil
+          = submit_tag "Search", :name => nil, :value => params[:q]
     = yield
     

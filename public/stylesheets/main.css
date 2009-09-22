@@ -72,7 +72,8 @@ textarea {
   background: #eee;
   float: left;
   margin-right: 2px;
-  border-bottom: 1px solid #999; }
-  .navigation a:hover {
+  border-bottom: 1px solid #999;
+  text-decoration: none; }
+  .navigation a:hover, .navigation a.selected {
     background: #999;
     border-bottom: 1px solid #333; }
