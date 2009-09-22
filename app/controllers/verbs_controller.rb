@@ -3,7 +3,7 @@ class VerbsController < ApplicationController
   # GET /verbs.xml
   def index
     @verb = Verb.new
-    @verbs = Verb.all(:order => "command DESC")
+    @verbs = Verb.all(:order => "command asc")
 
     respond_to do |format|
       format.html # index.html.erb
