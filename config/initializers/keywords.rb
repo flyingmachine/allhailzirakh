@@ -14,7 +14,7 @@ Keywords = %w{
 }
 
 Races = [
-  "Dwarv",
+  "Dwarf",
   "Elf",
   "Elothean",
   "Gor'Tog",
