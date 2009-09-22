@@ -62,7 +62,9 @@ textarea {
 .clear {
   clear: both; }
 
-.navigation .alpha a {
+.navigation .group {
+  margin-bottom: 10px; }
+.navigation a {
   display: block;
   padding: 5px 8px;
   background: #eee;

@@ -10,9 +10,17 @@
       %h1 All Hail Zirakh!
       .parenthetical Or else!!!
     .navigation
-      .alpha
+      .alpha.group
         - ("A".."Z").to_a.each do |letter|
           = link_to letter, verbs_path(:letter => letter)
+        .clear
+      .races.group
+        - Races.each do |race|
+          = link_to race, verbs_path(:race => race)
+        .clear
+      .guilds.group
+        - Guilds.each do |guild|
+          = link_to guild, verbs_path(:guild => guild)
         .clear
     = yield
     
