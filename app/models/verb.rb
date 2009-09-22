@@ -1,6 +1,5 @@
 class Verb < ActiveRecord::Base
   is_taggable
-  acts_as_solr
   
   validates_presence_of :command
   after_validation :extract_name
