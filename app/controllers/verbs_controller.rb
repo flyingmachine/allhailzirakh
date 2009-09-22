@@ -3,13 +3,22 @@ class VerbsController < ApplicationController
   # GET /verbs.xml
   def index
     @verb = Verb.new
-    @verbs = Verb.all(:order => "command asc")
+    find_verbs
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @verbs }
       format.js { render :partial => "list" }
     end
+  end
+  
+  def find_verbs
+    if params[:letter]
+      @verbs = Verb.all(:conditions => "name LIKE '#{params[:letter]}%'")
+    else
+      @verbs = Verb.all(:order => "command asc")
+    end
+    
   end
 
   # GET /verbs/1
