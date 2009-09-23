@@ -25,7 +25,7 @@
         - Guilds.each do |guild|
           = link_to guild, verbs_path(:tag => guild), :class => ("selected" if params[:tag] == guild)
         .clear
-      .search
+      .search.group
         %form
           = text_field_tag "q", params[:q]
           = submit_tag "Search", :name => nil
