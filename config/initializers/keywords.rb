@@ -11,6 +11,7 @@ Keywords = %w{
   bodypart
   self
   instrument
+  creature
 }
 
 Races = [
