@@ -18,8 +18,8 @@ class VerbsController < ApplicationController
     
     @verbs = if params[:letter]
       Verb.paginate(common.merge(:conditions => "verbs.name LIKE '#{params[:letter].downcase}%'"))
-    elsif tag = params[:race] || params[:guild]
-      Verb.all(common.merge(:conditions => "tags.name = '#{tag}'"))
+    elsif tag = params[:tag]
+      Verb.paginate(common.merge(:conditions => "tags.name = '#{tag}'"))
     elsif q = (params[:q] && params[:q].upcase)
       fields = %w{verbs.name verbs.command verbs.you_see verbs.target_sees verbs.others_see verbs.your_status verbs.notes tags.name}
       condition = fields.collect{|field| "UPPER(#{field}) LIKE '%#{q}%'"}.join(" OR ")

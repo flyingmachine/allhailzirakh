@@ -29,7 +29,7 @@
   - unless verb.tag_list.blank?
     %tr
       %td.see Tags:
-      %td= h verb.tag_list
+      %td= verb.tag_list.split(", ").collect{|tag| link_to tag, verbs_path(:tag => h(tag))}.join(", ")
   %tr.last
     %td{:colspan => 2}
       =  link_to 'Edit', edit_verb_path(verb)

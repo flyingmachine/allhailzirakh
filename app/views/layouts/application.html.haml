@@ -18,11 +18,11 @@
         .clear
       .races.group
         - Races.each do |race|
-          = link_to race, verbs_path(:race => race), :class => ("selected" if params[:race] == race)
+          = link_to race, verbs_path(:tag => race), :class => ("selected" if params[:tag] == race)
         .clear
       .guilds.group
         - Guilds.each do |guild|
-          = link_to guild, verbs_path(:guild => guild), :class => ("selected" if params[:guild] == guild)
+          = link_to guild, verbs_path(:tag => guild), :class => ("selected" if params[:tag] == guild)
         .clear
       .search
         %form
