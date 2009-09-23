@@ -59,6 +59,9 @@ textarea {
 .clear {
   clear: both; }
 
+#zirakh {
+  float: right; }
+
 .new-verb-container {
   float: right; }
   .new-verb-container h2 {

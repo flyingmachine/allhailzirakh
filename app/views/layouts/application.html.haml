@@ -8,6 +8,7 @@
     %title All Hail Zirakh! The best DR verb site there is
   %body
     .title
+      %img#zirakh{:src => "/images/zirakh.jpg"}
       %h1 
         = link_to "All Hail Zirakh!", root_path
       .parenthetical Or else!!!
@@ -26,9 +27,6 @@
         .clear
       .search
         %form
-          = text_field_tag "q"
-          = submit_tag "Search", :name => nil, :value => params[:q]
-    .pagination
-      = will_paginate @verbs
+          = text_field_tag "q", params[:q]
+          = submit_tag "Search", :name => nil
     = yield
-    
