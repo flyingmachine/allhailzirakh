@@ -29,14 +29,14 @@ Races = [
 ]
 
 Guilds = [
-  "Barbarians",
-  "Bards",
-  "Clerics",
-  "Empaths",
-  "Moon Mages",
-  "Paladins",
-  "Rangers",
-  "Thieves",
-  "Traders",
-  "Warrior Mages"
+  "Barbarian",
+  "Bard",
+  "Cleric",
+  "Empath",
+  "Moon Mage",
+  "Paladin",
+  "Ranger",
+  "Thief",
+  "Trader",
+  "Warrior Mage"
 ]
