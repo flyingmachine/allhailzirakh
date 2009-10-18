@@ -34,6 +34,10 @@
     <%= f.text_area :notes %>
   </p>
   <p>
+    <%= f.label :incomplete %><br />
+    <%= f.check_box :incomplete %>
+  </p>
+  <p>
     <% submit_text = @verb.new_record? ? "Create" : "Update" %>
     <%= f.submit submit_text %>
     <%= ajax_spinner %>
