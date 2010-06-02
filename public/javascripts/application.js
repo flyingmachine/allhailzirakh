@@ -40,4 +40,7 @@ NewVerbForm = $.klass(Remote.Form, {
 
 $(function(){
   $("#new_verb").attach(NewVerbForm)
+  $(".toggler").click(function(){
+    $(".explanation").toggle()
+  })
 })

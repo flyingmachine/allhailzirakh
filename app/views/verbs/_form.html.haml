@@ -1,0 +1,62 @@
+%br/
+= link_to "Show/Hide Help", "#", :class => "toggler"
+- form_for(@verb) do |f|
+  = f.error_messages
+  .form-group
+    = f.label :command
+    %br/
+    = f.text_field :command
+    .explanation
+      Each verb takes the form of "command (target preposition target | target)". Concrete examples: "point", "point chair", "put grub in boot". When you write the command, use one of the keywords at the bottom of this form - target, player, direction, etc. Try to use something more specific than "target". If you get different behaviors for different targets, then it's great to record them all. For good examples of this, see the "<a href='/verbs?letter=E'>ear</a>" verbs.
+  .form-group
+    = f.label :you_see
+    %br/
+    = f.text_field :you_see
+    .explanation
+      This is the text that DR displays for you when you perform the verb.
+  .form-group
+    = f.label :target_sees
+    %br/
+    = f.text_field :target_sees
+    .explanation
+      If your target is a person, this is what he or she sees.
+  .form-group
+    = f.label :others_see
+    %br/
+    = f.text_field :others_see
+    .explanation
+      This is what everyone else in the room sees.
+  .form-group
+    = f.label :tag_list, "Tags"
+    %br/
+    = f.text_field :tag_list
+    .explanation
+      Tags can be races and guilds. Please spell them exactly as you see them in the links at the top of the page.
+  .form-group
+    = f.label :your_status
+    %br/
+    = f.text_field :your_status, :value => (@verb.new_record? ? "standing/sitting/kneeling/hiding/invis" : @verb.your_status)
+    .explanation
+      Some verbs behave differently based on your status. Dance, for example.
+  .form-group
+    = f.label :roundtime
+    %br/
+    = f.text_field :roundtime
+  .form-group
+    = f.label :notes
+    %br/
+    = f.text_area :notes
+  .form-group
+    = f.label :incomplete
+    %br/
+    = f.check_box :incomplete
+    .explanation
+      Mark a verb incomplete if you haven't filled out all the relevant fields. For example, if there's an "others see" message but you don't have a third part to tell you what that is, mark the verb incomplete.
+  .form-group
+    - submit_text = @verb.new_record? ? "Create" : "Update"
+    = f.submit submit_text
+    = ajax_spinner
+%h3 Keywords
+- Keywords.each do |keyword|
+  = keyword
+  %br/

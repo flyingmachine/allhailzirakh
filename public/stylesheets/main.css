@@ -64,7 +64,9 @@ textarea {
   right: 50px; }
 
 .new-verb-container {
-  float: right; }
+  float: right; 
+  width:223px;
+  }
   .new-verb-container h2 {
     margin: 0; }
 
@@ -84,3 +86,17 @@ textarea {
 
 .pagination {
   margin: 20px 0 10px; }
+
+.form-group {
+  margin: 1em 0;
+}
+
+.explanation {
+  display:none;
+  font-size:.9em;
+  color:#333;
+  line-height:1.3em;
+  background:#fff0f0;
+  padding:5px;
+}
+  

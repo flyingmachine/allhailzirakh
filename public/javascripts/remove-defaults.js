@@ -25,7 +25,7 @@ function setDefault(selector, default_value){
 }
 
 function setDefaults() {  
-  setDefault("#verb_command", "point target")
+  setDefault("#verb_command", "point target/player/direction/weapon/armor/item/container/clothing/wearable/bodypart/self/instrument/creature")
   setDefault("#verb_your_status", "standing/sitting/kneeling/hiding/invis")
   setDefault("#verb_roundtime", "0")
   setDefault("#verb_you_see", "You point at Zirakh.")
