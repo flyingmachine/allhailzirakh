@@ -39,3 +39,5 @@
       =  link_to 'Destroy', verb, :confirm => 'Are you sure?', :method => :delete
   - if verb.name != current_name
     - current_name = verb.name
+.pagination
+  = will_paginate @verbs

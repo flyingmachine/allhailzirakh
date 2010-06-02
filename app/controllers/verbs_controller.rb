@@ -17,7 +17,7 @@ class VerbsController < ApplicationController
     common = {:order => "command asc", :include => :tags, :page => page}
     
     @verbs = if params[:letter]
-      Verb.paginate(common.merge(:conditions => ["verbs.name LIKE ?", "#{params[:letter]}%"]))
+      Verb.paginate(common.merge(:conditions => ["verbs.name LIKE ?", "#{params[:letter].downcase}%"]))
     elsif tag = params[:tag]
       Verb.paginate(common.merge(:conditions => ["tags.name = ?", tag]))
     elsif q = (params[:q] && params[:q].upcase)
