@@ -7,7 +7,11 @@
     %br/
     = f.text_field :command
     .explanation
-      Each verb takes the form of "command (target preposition target | target)". Concrete examples: "point", "point chair", "put grub in boot". When you write the command, use one of the keywords at the bottom of this form - target, player, direction, etc. Try to use something more specific than "target". If you get different behaviors for different targets, then it's great to record them all. For good examples of this, see the "<a href='/verbs?letter=E'>ear</a>" verbs.
+      Each verb takes the form of "command (target preposition target | target)". Concrete examples: "point", "point chair", "put grub in boot". When you write the command, use one of the keywords at the bottom of this form - target, player, direction, etc. Use something more specific than "target", if relevant.
+      %br/
+      If you get different behaviors for different targets, then it's great to record them all. For good examples of this, see the "<a href='/verbs?letter=E'>ear</a>" verbs.
+      %br/
+      If more than one target applies, separate them with slashes. For examples, "lean player/item".
   .form-group
     = f.label :you_see
     %br/
